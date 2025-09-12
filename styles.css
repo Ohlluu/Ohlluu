@@ -1575,20 +1575,10 @@ body {
     background: var(--gradient-primary);
 }
 
-.profile-image {
-    width: 120px;
-    height: 120px;
-    margin: 0 auto var(--space-lg) auto;
-    border-radius: var(--radius-full);
-    background: var(--gradient-primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-inverse);
-}
 
-.profile-placeholder {
-    opacity: 0.8;
+.profile-info {
+    text-align: center;
+    margin-bottom: var(--space-lg);
 }
 
 .profile-info h3 {
