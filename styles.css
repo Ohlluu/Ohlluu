@@ -649,8 +649,8 @@ body {
 }
 
 /* About stats - dark color for about section */
-.about-stats .stat-number {
-    color: #1F2937;
+.about-stats .stat .stat-number {
+    color: #1F2937 !important;
     text-shadow: none;
     font-size: var(--text-xl);
     font-weight: 800;
@@ -669,8 +669,8 @@ body {
 }
 
 /* About stats labels - secondary text */
-.about-stats .stat-label {
-    color: #6B7280;
+.about-stats .stat .stat-label {
+    color: #6B7280 !important;
     opacity: 1;
     font-weight: 500;
 }
