@@ -1571,20 +1571,15 @@ body {
     height: 120px;
     margin: 0 auto var(--space-lg) auto;
     border-radius: var(--radius-full);
-    overflow: hidden;
-    border: 4px solid var(--primary);
-    box-shadow: 0 10px 30px var(--shadow-colored);
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-inverse);
 }
 
-.profile-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform var(--duration-normal) ease;
-}
-
-.profile-image:hover img {
-    transform: scale(1.1);
+.profile-placeholder {
+    opacity: 0.8;
 }
 
 .profile-info h3 {
