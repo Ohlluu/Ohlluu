@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ohlluu.com/sitemap.xml
+
+# Crawl delay (be respectful)
+Crawl-delay: 1
+
+# Block unwanted paths
+Disallow: /assets/temp/
+Disallow: /node_modules/
+Disallow: /.git/
