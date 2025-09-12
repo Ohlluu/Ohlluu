@@ -637,13 +637,40 @@ body {
     display: block;
     font-size: var(--text-2xl);
     font-weight: 800;
-    color: var(--text-inverse);
+    color: #FFFFFF;
     margin-bottom: var(--space-xs);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Hero stats - bright white for hero section */
+.hero-stats .stat-number {
+    color: #FFFFFF;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* About stats - primary color for about section */
+.about-stats .stat-number {
+    color: var(--primary);
+    text-shadow: none;
+    font-size: var(--text-xl);
 }
 
 .stat-label {
     font-size: var(--text-sm);
-    opacity: 0.8;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+/* Hero stats labels - bright white */
+.hero-stats .stat-label {
+    color: #FFFFFF;
+    opacity: 0.9;
+}
+
+/* About stats labels - secondary text */
+.about-stats .stat-label {
+    color: var(--text-secondary);
+    opacity: 1;
 }
 
 .hero-actions {
