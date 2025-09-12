@@ -648,11 +648,12 @@ body {
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
-/* About stats - primary color for about section */
+/* About stats - dark color for about section */
 .about-stats .stat-number {
-    color: var(--primary);
+    color: #1F2937;
     text-shadow: none;
     font-size: var(--text-xl);
+    font-weight: 800;
 }
 
 .stat-label {
@@ -669,8 +670,9 @@ body {
 
 /* About stats labels - secondary text */
 .about-stats .stat-label {
-    color: var(--text-secondary);
+    color: #6B7280;
     opacity: 1;
+    font-weight: 500;
 }
 
 .hero-actions {
