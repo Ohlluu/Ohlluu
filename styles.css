@@ -1248,6 +1248,15 @@ body {
     padding: var(--space-2xl);
 }
 
+/* Specific project gradients for live projects */
+.portfolio-item[data-category="web-app"] .demo-project {
+    background: linear-gradient(135deg, #FF8C42 0%, #FFB366 100%);
+}
+
+.portfolio-item[data-category="website"] .demo-project {
+    background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+}
+
 .demo-icon {
     font-size: var(--text-4xl);
     margin-bottom: var(--space-md);
