@@ -1019,69 +1019,194 @@ body {
     transform: translateY(-2px);
 }
 
-/* Specific project preview styles */
-.mangopets-preview {
+/* Website Mockup Styles */
+.website-mockup {
+    width: 100%;
+    height: 100%;
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--shadow-dark);
+}
+
+.mockup-browser {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.browser-bar {
+    background: #F3F4F6;
+    padding: var(--space-md);
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.browser-controls {
+    display: flex;
+    gap: var(--space-xs);
+}
+
+.browser-controls .control {
+    width: 12px;
+    height: 12px;
+    border-radius: var(--radius-full);
+}
+
+.browser-controls .control.red {
+    background: #EF4444;
+}
+
+.browser-controls .control.yellow {
+    background: #F59E0B;
+}
+
+.browser-controls .control.green {
+    background: #10B981;
+}
+
+.address-bar {
+    background: white;
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--radius-sm);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--text-sm);
+    color: #6B7280;
+    border: 1px solid #E5E7EB;
+    flex: 1;
+}
+
+.website-content {
+    flex: 1;
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    overflow: hidden;
+}
+
+.hero-section {
+    text-align: center;
+}
+
+.hero-section h2 {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: var(--space-sm) 0;
+}
+
+.hero-section p {
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-md);
+}
+
+.logo-img {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-lg);
+    object-fit: cover;
+    margin: 0 auto var(--space-sm) auto;
+    box-shadow: 0 4px 15px var(--shadow-medium);
+}
+
+.cta-button {
+    background: var(--gradient-secondary);
+    color: white;
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius-lg);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    display: inline-block;
+    margin: var(--space-sm) 0;
+}
+
+.app-screens {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+}
+
+.phone-mockup {
+    font-size: var(--text-lg);
+    background: var(--bg-secondary);
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-light);
+}
+
+/* MangoPets specific styles */
+.mangopets-preview .website-content {
     background: linear-gradient(135deg, #FF8C42 0%, #FFB366 100%);
     color: white;
 }
 
-.mangopets-preview .preview-header {
-    background: rgba(255, 255, 255, 0.1);
-    border-bottom-color: rgba(255, 255, 255, 0.2);
+.mangopets-preview .hero-section h2,
+.mangopets-preview .hero-section p {
+    color: white;
 }
 
-.mangopets-preview .preview-url {
-    background: rgba(255, 255, 255, 0.9);
-    color: #FF8C42;
+.mangopets-preview .cta-button {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.mangopets-preview .phone-mockup {
+    background: rgba(255, 255, 255, 0.2);
     border-color: rgba(255, 255, 255, 0.3);
 }
 
-.mangopets-preview .preview-hero h3,
-.mangopets-preview .preview-hero p {
-    color: white;
-}
-
-.mangopets-preview .feature-item {
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.mangopets-preview .feature-item:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: translateY(-2px);
-}
-
-.phoenixstar-preview {
+/* Phoenix Star specific styles */
+.phoenixstar-preview .website-content.phoenix-content {
     background: linear-gradient(135deg, #1E293B 0%, #334155 100%);
     color: white;
 }
 
-.phoenixstar-preview .preview-header {
-    background: rgba(255, 255, 255, 0.05);
-    border-bottom-color: rgba(255, 255, 255, 0.1);
+.phoenix-logo {
+    font-size: var(--text-4xl);
+    margin-bottom: var(--space-sm);
+    animation: float 3s ease-in-out infinite;
 }
 
-.phoenixstar-preview .preview-url {
-    background: rgba(255, 255, 255, 0.9);
-    color: #1E293B;
-    border-color: rgba(255, 255, 255, 0.2);
-}
-
-.phoenixstar-preview .preview-hero h3,
-.phoenixstar-preview .preview-hero p {
+.phoenixstar-preview .hero-section h2,
+.phoenixstar-preview .hero-section p {
     color: white;
 }
 
-.phoenixstar-preview .feature-item {
+.nav-menu {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    margin-top: var(--space-md);
+}
+
+.nav-menu span {
     background: rgba(255, 255, 255, 0.1);
-    color: white;
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-sm);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.phoenixstar-preview .feature-item:hover {
-    background: rgba(59, 130, 246, 0.3);
-    transform: translateY(-2px);
+.corporate-features {
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: center;
+    margin-top: var(--space-md);
+}
+
+.feature-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-xs);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
 }
 
 .demo-project {
@@ -1419,15 +1544,20 @@ body {
     height: 120px;
     margin: 0 auto var(--space-lg) auto;
     border-radius: var(--radius-full);
-    background: var(--gradient-primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-inverse);
+    overflow: hidden;
+    border: 4px solid var(--primary);
+    box-shadow: 0 10px 30px var(--shadow-colored);
 }
 
-.profile-placeholder {
-    opacity: 0.8;
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--duration-normal) ease;
+}
+
+.profile-image:hover img {
+    transform: scale(1.1);
 }
 
 .profile-info h3 {
