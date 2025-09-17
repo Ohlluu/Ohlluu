@@ -516,7 +516,15 @@ const ProjectModals = {
 class FormHandler {
     constructor() {
         this.contactForm = document.getElementById('contact-form');
+        this.initEmailJS();
         this.init();
+    }
+    
+    initEmailJS() {
+        // Initialize EmailJS with your public key
+        if (typeof emailjs !== 'undefined') {
+            emailjs.init('YOUR_PUBLIC_KEY'); // You'll replace this with your actual public key
+        }
     }
     
     init() {
@@ -538,13 +546,34 @@ class FormHandler {
             return;
         }
         
-        // Simulate form submission (replace with actual endpoint)
+        // Show loading state
         this.showLoadingState();
         
-        setTimeout(() => {
-            this.showSuccessMessage();
-            this.contactForm.reset();
-        }, 2000);
+        // Send email using EmailJS
+        emailjs.send(
+            'service_ohlluu', // Service ID (you'll need to create this)
+            'template_ohlluu', // Template ID (you'll need to create this)
+            {
+                from_name: data.name,
+                from_email: data.email,
+                company: data.company || 'Not specified',
+                budget: data.budget || 'Not specified',
+                project_type: data.project_type || 'Not specified',
+                message: data.message,
+                to_email: 'ohlluumarketing@gmail.com'
+            },
+            'YOUR_PUBLIC_KEY' // Public key (you'll get this from EmailJS)
+        ).then(
+            (response) => {
+                console.log('Email sent successfully!', response.status, response.text);
+                this.showSuccessMessage();
+                this.contactForm.reset();
+            },
+            (error) => {
+                console.error('Email failed to send:', error);
+                this.showError('Failed to send message. Please try again or email me directly at ohlluumarketing@gmail.com');
+            }
+        );
     }
     
     validateForm(data) {
