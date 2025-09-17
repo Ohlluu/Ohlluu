@@ -554,13 +554,12 @@ class FormHandler {
             'service_k84w8fy', // Service ID
             'template_1b18osv', // Template ID
             {
-                from_name: data.name,
-                from_email: data.email,
+                name: data.name,
+                email: data.email,
                 company: data.company || 'Not specified',
-                budget: data.budget || 'Not specified',
-                project_type: data.project_type || 'Not specified',
-                message: data.message,
-                to_email: 'ohlluumarketing@gmail.com'
+                budget: data.budget || 'Not specified', 
+                service: data.service || 'Not specified',
+                message: data.message
             },
             'r_pwk-GrKRUP60vdM' // Public key
         ).then(
