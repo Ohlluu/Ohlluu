@@ -549,6 +549,10 @@ class FormHandler {
         // Show loading state
         this.showLoadingState();
         
+        // Debug: Log form data
+        console.log('Form data being sent:', data);
+        console.log('EmailJS initialized:', typeof emailjs !== 'undefined');
+        
         // Send email using EmailJS
         emailjs.send(
             'service_k84w8fy', // Service ID
@@ -569,8 +573,19 @@ class FormHandler {
                 this.contactForm.reset();
             },
             (error) => {
-                console.error('Email failed to send:', error);
-                this.showError('Failed to send message. Please try again or email me directly at ohlluumarketing@gmail.com');
+                console.error('EmailJS Error Details:', error);
+                console.error('Error status:', error.status);
+                console.error('Error text:', error.text);
+                console.error('Error name:', error.name);
+                
+                let errorMessage = 'Failed to send message. Please try again or email me directly at ohlluumarketing@gmail.com';
+                
+                // Show specific error if available
+                if (error.text) {
+                    errorMessage = `Error: ${error.text}. Please email me directly at ohlluumarketing@gmail.com`;
+                }
+                
+                this.showError(errorMessage);
             }
         );
     }
