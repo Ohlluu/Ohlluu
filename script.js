@@ -523,7 +523,7 @@ class FormHandler {
     initEmailJS() {
         // Initialize EmailJS with your public key
         if (typeof emailjs !== 'undefined') {
-            emailjs.init('YOUR_PUBLIC_KEY'); // You'll replace this with your actual public key
+            emailjs.init('r_pwk-GrKRUP60vdM');
         }
     }
     
@@ -551,8 +551,8 @@ class FormHandler {
         
         // Send email using EmailJS
         emailjs.send(
-            'service_ohlluu', // Service ID (you'll need to create this)
-            'template_ohlluu', // Template ID (you'll need to create this)
+            'service_k84w8fy', // Service ID
+            'template_1b18osv', // Template ID
             {
                 from_name: data.name,
                 from_email: data.email,
@@ -562,7 +562,7 @@ class FormHandler {
                 message: data.message,
                 to_email: 'ohlluumarketing@gmail.com'
             },
-            'YOUR_PUBLIC_KEY' // Public key (you'll get this from EmailJS)
+            'r_pwk-GrKRUP60vdM' // Public key
         ).then(
             (response) => {
                 console.log('Email sent successfully!', response.status, response.text);
