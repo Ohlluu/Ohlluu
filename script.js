@@ -516,15 +516,7 @@ const ProjectModals = {
 class FormHandler {
     constructor() {
         this.contactForm = document.getElementById('contact-form');
-        this.initEmailJS();
         this.init();
-    }
-    
-    initEmailJS() {
-        // Initialize EmailJS with your public key
-        if (typeof emailjs !== 'undefined') {
-            emailjs.init('r_pwk-GrKRUP60vdM');
-        }
     }
     
     init() {
@@ -549,45 +541,30 @@ class FormHandler {
         // Show loading state
         this.showLoadingState();
         
-        // Debug: Log form data
-        console.log('Form data being sent:', data);
-        console.log('EmailJS initialized:', typeof emailjs !== 'undefined');
-        
-        // Send email using EmailJS
-        emailjs.send(
-            'service_k84w8fy', // Service ID
-            'template_1b18osv', // Template ID
-            {
-                name: data.name,
-                email: data.email,
-                company: data.company || 'Not specified',
-                budget: data.budget || 'Not specified', 
-                service: data.service || 'Not specified',
-                message: data.message
-            },
-            'r_pwk-GrKRUP60vdM' // Public key
-        ).then(
-            (response) => {
-                console.log('Email sent successfully!', response.status, response.text);
+        // Submit to Formspree
+        fetch('https://formspree.io/f/xnnbkzjp', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
                 this.showSuccessMessage();
                 this.contactForm.reset();
-            },
-            (error) => {
-                console.error('EmailJS Error Details:', error);
-                console.error('Error status:', error.status);
-                console.error('Error text:', error.text);
-                console.error('Error name:', error.name);
-                
-                let errorMessage = 'Failed to send message. Please try again or email me directly at ohlluumarketing@gmail.com';
-                
-                // Show specific error if available
-                if (error.text) {
-                    errorMessage = `Error: ${error.text}. Please email me directly at ohlluumarketing@gmail.com`;
-                }
-                
-                this.showError(errorMessage);
+            } else {
+                response.json().then(data => {
+                    if (data.errors) {
+                        this.showError('Form validation error. Please check your inputs and try again.');
+                    } else {
+                        this.showError('Failed to send message. Please try again or email me directly at ohlluumarketing@gmail.com');
+                    }
+                });
             }
-        );
+        }).catch(error => {
+            console.error('Formspree Error:', error);
+            this.showError('Failed to send message. Please try again or email me directly at ohlluumarketing@gmail.com');
+        });
     }
     
     validateForm(data) {
