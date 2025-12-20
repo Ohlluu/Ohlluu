@@ -69,8 +69,8 @@ body {
     --space-xl: 2rem;      /* 32px */
     --space-2xl: 3rem;     /* 48px */
     --space-3xl: 4rem;     /* 64px */
-    --space-4xl: 6rem;     /* 96px */
-    --space-5xl: 8rem;     /* 128px */
+    --space-4xl: 7.5rem;   /* 120px - increased for more breathing room */
+    --space-5xl: 10rem;    /* 160px */
     
     /* === Typography Scale === */
     --text-xs: 0.75rem;    /* 12px */
@@ -82,8 +82,8 @@ body {
     --text-3xl: 1.875rem;  /* 30px */
     --text-4xl: 2.25rem;   /* 36px */
     --text-5xl: 3rem;      /* 48px */
-    --text-6xl: 3.75rem;   /* 60px */
-    --text-7xl: 4.5rem;    /* 72px */
+    --text-6xl: 5rem;      /* 80px - MORE DRAMATIC */
+    --text-7xl: 6rem;      /* 96px */
     
     /* === Border Radius === */
     --radius-sm: 0.375rem;  /* 6px */
@@ -2197,5 +2197,236 @@ body {
         border: 1px solid black;
         background: white;
         color: black;
+    }
+}
+/* ===== ENHANCED HOMEPAGE STYLES ===== */
+
+/* Use Outfit font for all headings */
+h1, h2, h3, h4, h5, h6,
+.hero-title,
+.section-title {
+    font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Hero Title - MORE DRAMATIC */
+.hero-title {
+    font-size: var(--text-6xl);  /* 80px */
+    line-height: 1.1;  /* Tighter */
+    letter-spacing: -0.02em;  /* Premium feel */
+    margin-bottom: var(--space-xl);
+}
+
+/* Hero - Add Mesh Gradient Overlay */
+.hero-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(236, 72, 153, 0.15) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Hero Content - More Spacing */
+.hero-content {
+    padding-right: var(--space-xl);
+}
+
+.hero-description {
+    margin-bottom: var(--space-3xl);  /* More space before buttons */
+}
+
+/* Hero Stats - Bigger Numbers with Separator */
+.hero-stats {
+    padding-top: var(--space-2xl);
+    margin-top: var(--space-2xl);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.stat-number {
+    font-size: var(--text-5xl);  /* 48px - BIGGER */
+    font-weight: 900;
+}
+
+/* CTA Buttons - Primary Gradient + Secondary Outline */
+.btn-secondary {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: none;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Code Window - Typing Animation */
+.code-text {
+    opacity: 0;
+    animation: typeIn 0.5s ease forwards;
+}
+
+.code-line:nth-child(1) .code-text {
+    animation-delay: 0.5s;
+}
+
+.code-line:nth-child(2) .code-text {
+    animation-delay: 1.5s;
+}
+
+.code-line:nth-child(3) .code-text {
+    animation-delay: 2.5s;
+}
+
+.code-line:nth-child(4) .code-text {
+    animation-delay: 3.5s;
+}
+
+.code-line:nth-child(5) .code-text {
+    animation-delay: 4.5s;
+}
+
+@keyframes typeIn {
+    from {
+        opacity: 0;
+        width: 0;
+    }
+    to {
+        opacity: 1;
+        width: 100%;
+    }
+}
+
+/* Code line gets typing cursor */
+.code-text::after {
+    content: '|';
+    animation: blink 1s step-end infinite;
+    margin-left: 2px;
+    opacity: 0;
+}
+
+.code-line:last-child .code-text::after {
+    animation: blink 1s step-end infinite;
+    opacity: 1;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* ===== FULL-WIDTH HERO LAYOUT (APPLE-STYLE) ===== */
+
+/* Override hero-container to single column layout */
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4xl);
+    text-align: center;
+    padding: var(--space-4xl) var(--container-padding);
+}
+
+/* Full-width hero content */
+.hero-content-full {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    animation: fadeInUp 1s ease var(--duration-normal);
+}
+
+.hero-content-full .hero-title {
+    width: 100%;
+    margin: 0 auto var(--space-xl) auto;
+}
+
+.hero-content-full .hero-description {
+    max-width: 1100px;  /* Extend across full page width */
+    margin: 0 auto var(--space-3xl) auto;
+    font-size: var(--text-xl);  /* Slightly larger for better readability */
+}
+
+.hero-content-full .hero-actions {
+    justify-content: center;
+}
+
+/* Full-width hero visual - code window below content */
+.hero-visual-full {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    animation: fadeInUp 1s ease var(--duration-slow);
+}
+
+/* Hero stats below code window */
+.hero-stats {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+    padding: var(--space-2xl) var(--space-lg);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-xl);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive - Adjust hero title on smaller screens */
+@media (max-width: 1200px) {
+    .hero-title {
+        font-size: 4rem;  /* 64px */
+    }
+
+    .hero-content-full {
+        max-width: 900px;
+    }
+}
+
+@media (max-width: 968px) {
+    .hero-title {
+        font-size: 3.5rem;  /* 56px */
+    }
+
+    .stat-number {
+        font-size: var(--text-3xl);  /* 30px on tablet */
+    }
+
+    .hero-container {
+        gap: var(--space-3xl);
+    }
+
+    .hero-content-full,
+    .hero-visual-full {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-title {
+        font-size: 2.5rem;  /* 40px */
+        line-height: 1.2;
+    }
+
+    .stat-number {
+        font-size: var(--text-2xl);  /* 24px on mobile */
+    }
+
+    .hero-container {
+        gap: var(--space-2xl);
+    }
+
+    .hero-stats {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+        padding: var(--space-lg);
     }
 }
