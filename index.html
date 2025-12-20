@@ -3,28 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
     <!-- Primary SEO Tags -->
     <title>Ohlluu - Elite Web Developer | Custom Websites & Apps That Convert</title>
     <meta name="description" content="Professional web developer specializing in modern websites, web apps, and e-commerce solutions. Creating stunning digital experiences that drive results for startups and enterprises.">
     <meta name="keywords" content="web developer, website development, web applications, e-commerce, React, JavaScript, full-stack developer">
     <meta name="author" content="Ohlluu">
     <link rel="canonical" href="https://ohlluu.com/">
-
-    <!--Open Graph / Facebook -->
+    
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ohlluu.com/">
     <meta property="og:title" content="Ohlluu - Elite Web Developer | Custom Digital Solutions">
     <meta property="og:description" content="Professional web developer creating stunning websites and applications that convert visitors into customers. View my portfolio and get your project started today.">
     <meta property="og:image" content="https://ohlluu.com/assets/og-image.jpg">
     <meta property="og:site_name" content="Ohlluu - Web Developer">
-
+    
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Ohlluu - Elite Web Developer">
     <meta name="twitter:description" content="Creating stunning websites and applications that drive results. Professional web development services.">
     <meta name="twitter:image" content="https://ohlluu.com/assets/og-image.jpg">
-
+    
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
@@ -44,23 +44,23 @@
         "areaServed": "Worldwide"
     }
     </script>
-
+    
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
+    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
-
+    
     <!-- Preload Critical Resources -->
     <link rel="preload" href="styles.css" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style">
 </head>
 <body>
     <!-- Loading Screen -->
@@ -80,17 +80,33 @@
         <div class="nav-container">
             <a href="#home" class="nav-logo">
                 <span class="logo-text">OHLLUU</span>
+                <div class="logo-dot"></div>
             </a>
-
+            
             <div class="nav-menu" id="nav-menu">
                 <a href="#home" class="nav-link active">Home</a>
                 <a href="#portfolio" class="nav-link">Portfolio</a>
                 <a href="#services" class="nav-link">Services</a>
                 <a href="#about" class="nav-link">About</a>
-                <a href="#contact" class="btn-nav">Get Started</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <div class="toggle-track">
+                        <div class="toggle-thumb">
+                            <span class="toggle-icon">🌙</span>
+                        </div>
+                    </div>
+                </button>
             </div>
-
+            
             <div class="nav-mobile">
+                <button class="theme-toggle mobile" id="mobile-theme-toggle" aria-label="Toggle dark mode">
+                    <div class="toggle-track">
+                        <div class="toggle-thumb">
+                            <span class="toggle-icon">🌙</span>
+                        </div>
+                    </div>
+                </button>
                 <button class="hamburger" id="hamburger" aria-label="Toggle menu">
                     <span></span>
                     <span></span>
@@ -102,41 +118,120 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="hero-bg">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        
         <div class="hero-container">
-            <div class="hero-content-centered">
+            <div class="hero-content">
                 <div class="hero-badge">
                     <span class="badge-dot"></span>
                     Available for new projects
                 </div>
-
-                <h1 class="hero-title-large">
-                    Websites that<br>make an impact.
+                
+                <h1 class="hero-title">
+                    <span class="title-line">Crafting</span>
+                    <span class="title-line">
+                        <span class="gradient-text">Digital</span>
+                        <span class="title-line">Experiences</span>
+                    </span>
+                    <span class="title-line">That Convert</span>
                 </h1>
-
-                <p class="hero-subtitle">
-                    Modern, fast, and built to convert. From startups to enterprises.
+                
+                <p class="hero-description">
+                    Elite web developer specializing in modern websites, web applications, and e-commerce solutions that drive real business results. From startups to enterprises, I transform ideas into powerful digital experiences.
                 </p>
-
-                <div class="hero-actions-centered">
-                    <a href="#portfolio" class="btn-hero-primary">View work</a>
-                    <a href="#contact" class="btn-hero-link">Get started →</a>
-                </div>
-
-                <div class="hero-stats-minimal">
-                    <div class="stat-minimal">
+                
+                <div class="hero-stats">
+                    <div class="stat">
                         <span class="stat-number">100+</span>
-                        <span class="stat-label">Projects</span>
+                        <span class="stat-label">Projects Delivered</span>
                     </div>
-                    <div class="stat-minimal">
+                    <div class="stat">
                         <span class="stat-number">50+</span>
-                        <span class="stat-label">Clients</span>
+                        <span class="stat-label">Happy Clients</span>
                     </div>
-                    <div class="stat-minimal">
+                    <div class="stat">
                         <span class="stat-number">5⭐</span>
-                        <span class="stat-label">Rating</span>
+                        <span class="stat-label">Average Rating</span>
                     </div>
+                </div>
+                
+                <div class="hero-actions">
+                    <a href="#portfolio" class="btn btn-primary">
+                        <span>View My Work</span>
+                        <svg class="btn-arrow" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"/>
+                        </svg>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <span>Start Your Project</span>
+                    </a>
                 </div>
             </div>
+            
+            <div class="hero-visual">
+                <div class="code-window">
+                    <div class="window-header">
+                        <div class="window-controls">
+                            <div class="control red"></div>
+                            <div class="control yellow"></div>
+                            <div class="control green"></div>
+                        </div>
+                        <div class="window-title">index.js</div>
+                    </div>
+                    <div class="window-content">
+                        <div class="code-line">
+                            <span class="line-number">1</span>
+                            <span class="code-text">
+                                <span class="keyword">const</span> 
+                                <span class="variable">developer</span> = 
+                                <span class="string">'Ohlluu'</span>;
+                            </span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">2</span>
+                            <span class="code-text">
+                                <span class="keyword">const</span> 
+                                <span class="variable">skills</span> = [
+                            </span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">3</span>
+                            <span class="code-text">
+                                &nbsp;&nbsp;<span class="string">'React'</span>,
+                                <span class="string">'Node.js'</span>,
+                                <span class="string">'Python'</span>
+                            </span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">4</span>
+                            <span class="code-text">];</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">5</span>
+                            <span class="code-text">
+                                <span class="variable">developer</span>.<span class="method">createAmazing</span>();
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="floating-elements">
+                    <div class="tech-badge badge-react">React</div>
+                    <div class="tech-badge badge-js">JS</div>
+                    <div class="tech-badge badge-node">Node</div>
+                    <div class="tech-badge badge-css">CSS3</div>
+                    <div class="tech-badge badge-python">Python</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>Scroll to explore</span>
         </div>
     </section>
 
@@ -150,14 +245,14 @@
                     A showcase of my recent work - from elegant business websites to powerful web applications
                 </p>
             </div>
-
+            
             <div class="portfolio-filter">
                 <button class="filter-btn active" data-filter="all">All Projects</button>
                 <button class="filter-btn" data-filter="web-app">Web Apps</button>
                 <button class="filter-btn" data-filter="website">Websites</button>
                 <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
             </div>
-
+            
             <div class="portfolio-grid">
                 <!-- MangoPets Project -->
                 <div class="portfolio-item" data-category="web-app">
@@ -204,7 +299,7 @@
                         </div>
                     </div>
                 </div>
-
+                
                 <!-- Phoenix Star Project -->
                 <div class="portfolio-item" data-category="website">
                     <div class="project-image">
@@ -250,7 +345,7 @@
                         </div>
                     </div>
                 </div>
-
+                
                 <!-- Demo Projects -->
                 <div class="portfolio-item" data-category="ecommerce">
                     <div class="project-image">
@@ -290,7 +385,7 @@
                         </div>
                     </div>
                 </div>
-
+                
                 <div class="portfolio-item" data-category="web-app">
                     <div class="project-image">
                         <div class="demo-project">
@@ -343,7 +438,7 @@
                     Comprehensive web development services tailored to your business needs
                 </p>
             </div>
-
+            
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
@@ -361,8 +456,9 @@
                         <li>Performance Optimization</li>
                         <li>CMS Integration</li>
                     </ul>
+                    <div class="service-price">Let's discuss your budget</div>
                 </div>
-
+                
                 <div class="service-card featured">
                     <div class="service-badge">Most Popular</div>
                     <div class="service-icon">
@@ -380,8 +476,9 @@
                         <li>Database Design</li>
                         <li>User Authentication</li>
                     </ul>
+                    <div class="service-price">Flexible pricing options</div>
                 </div>
-
+                
                 <div class="service-card">
                     <div class="service-icon">
                         <svg width="40" height="40" fill="currentColor" viewBox="0 0 20 20">
@@ -398,6 +495,64 @@
                         <li>Inventory Management</li>
                         <li>Analytics Dashboard</li>
                     </ul>
+                    <div class="service-price">Custom quotes available</div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="40" height="40" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">API Development</h3>
+                    <p class="service-description">
+                        RESTful APIs and microservices for scalable backend solutions and integrations.
+                    </p>
+                    <ul class="service-features">
+                        <li>REST API Design</li>
+                        <li>Database Integration</li>
+                        <li>Authentication & Security</li>
+                        <li>Documentation</li>
+                    </ul>
+                    <div class="service-price">Tailored to your needs</div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="40" height="40" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Maintenance & Support</h3>
+                    <p class="service-description">
+                        Ongoing maintenance, security updates, and technical support for your digital assets.
+                    </p>
+                    <ul class="service-features">
+                        <li>Security Updates</li>
+                        <li>Performance Monitoring</li>
+                        <li>Bug Fixes</li>
+                        <li>24/7 Support</li>
+                    </ul>
+                    <div class="service-price">Affordable monthly plans</div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="40" height="40" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Consulting</h3>
+                    <p class="service-description">
+                        Technical consulting for architecture decisions, code reviews, and technology strategy.
+                    </p>
+                    <ul class="service-features">
+                        <li>Technical Audits</li>
+                        <li>Architecture Planning</li>
+                        <li>Code Reviews</li>
+                        <li>Technology Strategy</li>
+                    </ul>
+                    <div class="service-price">Competitive hourly rates</div>
                 </div>
             </div>
         </div>
@@ -413,7 +568,7 @@
                     <p class="about-description">
                         I'm a passionate web developer with expertise across the entire technology stack. From elegant frontend interfaces to robust backend systems, I create digital solutions that drive real business results.
                     </p>
-
+                    
                     <div class="skills-grid">
                         <div class="skill-category">
                             <h4 class="skill-title">Frontend</h4>
@@ -426,7 +581,7 @@
                                 <span class="skill">Tailwind CSS</span>
                             </div>
                         </div>
-
+                        
                         <div class="skill-category">
                             <h4 class="skill-title">Backend</h4>
                             <div class="skill-list">
@@ -438,7 +593,7 @@
                                 <span class="skill">Redis</span>
                             </div>
                         </div>
-
+                        
                         <div class="skill-category">
                             <h4 class="skill-title">Tools & DevOps</h4>
                             <div class="skill-list">
@@ -451,8 +606,27 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Support</span>
+                        </div>
+                    </div>
                 </div>
-
+                
                 <div class="about-visual">
                     <div class="profile-card">
                         <div class="profile-info">
@@ -470,7 +644,7 @@
                             <span>Available for projects</span>
                         </div>
                     </div>
-
+                    
                     <div class="certification-cards">
                         <div class="cert-card">
                             <div class="cert-icon">🏆</div>
@@ -502,7 +676,7 @@
                     Ready to transform your ideas into powerful digital solutions? Let's discuss your project.
                 </p>
             </div>
-
+            
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-card">
@@ -518,7 +692,7 @@
                             <span>I'll respond within 24 hours</span>
                         </div>
                     </div>
-
+                    
                     <div class="contact-card">
                         <div class="contact-icon">
                             <svg width="24" height="24" fill="currentColor" viewBox="0 0 20 20">
@@ -531,7 +705,7 @@
                             <span>Available Monday - Friday</span>
                         </div>
                     </div>
-
+                    
                     <div class="contact-card">
                         <div class="contact-icon">
                             <svg width="24" height="24" fill="currentColor" viewBox="0 0 20 20">
@@ -545,7 +719,7 @@
                         </div>
                     </div>
                 </div>
-
+                
                 <div class="contact-form">
                     <form id="contact-form" class="form" action="https://formspree.io/f/xnnbkzjp" method="POST">
                         <div class="form-row">
@@ -558,7 +732,7 @@
                                 <input type="email" id="email" name="email" class="form-input" required>
                             </div>
                         </div>
-
+                        
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="company" class="form-label">Company</label>
@@ -576,7 +750,7 @@
                                 </select>
                             </div>
                         </div>
-
+                        
                         <div class="form-group">
                             <label for="service" class="form-label">Service Needed</label>
                             <select id="service" name="service" class="form-select">
@@ -590,12 +764,12 @@
                                 <option value="other">Other</option>
                             </select>
                         </div>
-
+                        
                         <div class="form-group">
                             <label for="message" class="form-label">Project Details *</label>
                             <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Tell me about your project, goals, and timeline..." required></textarea>
                         </div>
-
+                        
                         <button type="submit" class="btn btn-primary form-submit">
                             <span class="btn-text">Send Message</span>
                             <svg class="btn-arrow" width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
@@ -616,7 +790,7 @@
                     <h3 class="footer-logo">OHLLUU</h3>
                     <p class="footer-tagline">Crafting digital experiences that convert</p>
                 </div>
-
+                
                 <div class="footer-links">
                     <div class="footer-column">
                         <h4 class="footer-title">Services</h4>
@@ -624,9 +798,10 @@
                             <li><a href="#services">Website Development</a></li>
                             <li><a href="#services">Web Applications</a></li>
                             <li><a href="#services">E-Commerce</a></li>
+                            <li><a href="#services">API Development</a></li>
                         </ul>
                     </div>
-
+                    
                     <div class="footer-column">
                         <h4 class="footer-title">Company</h4>
                         <ul class="footer-list">
@@ -636,18 +811,15 @@
                         </ul>
                     </div>
                 </div>
-
+                
                 <div class="footer-contact">
                     <h4 class="footer-title">Get In Touch</h4>
                     <a href="mailto:ohlluumarketing@gmail.com" class="footer-email">
                         ohlluumarketing@gmail.com
                     </a>
-                    <button class="theme-toggle-footer" id="theme-toggle" aria-label="Toggle dark mode">
-                        <span class="toggle-icon">🌙</span> Dark Mode
-                    </button>
                 </div>
             </div>
-
+            
             <div class="footer-bottom">
                 <p class="footer-copyright">
                     © 2024 Ohlluu. All rights reserved. Built with passion and modern web technologies.
