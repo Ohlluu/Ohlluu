@@ -1924,6 +1924,165 @@ body {
     border-color: var(--primary);
 }
 
+/* Background Patterns for All Cards - Corner Positioned (All Devices) */
+/* Card 0 - Web Design & Development - Clustered Dots */
+.service-feature-card[data-delay="0"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 75%;
+    height: 75%;
+    background: radial-gradient(circle at top right,
+        radial-gradient(circle, rgba(201, 168, 124, 0.2) 1px, transparent 1px) 0 0 / 15px 15px,
+        transparent
+    );
+    background-image: radial-gradient(circle, rgba(201, 168, 124, 0.30) 1px, transparent 1px);
+    background-size: 12px 12px;
+    mask-image: radial-gradient(circle at top right, black 0%, transparent 70%);
+    -webkit-mask-image: radial-gradient(circle at top right, black 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    border-radius: var(--radius-2xl);
+}
+
+/* Card 1 - UI/UX Design - Grid Pattern */
+.service-feature-card[data-delay="1"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 75%;
+    height: 75%;
+    background-image:
+        linear-gradient(90deg, rgba(201, 168, 124, 0.30) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(201, 168, 124, 0.30) 1px, transparent 1px);
+    background-size: 18px 18px;
+    mask-image: radial-gradient(circle at top right, black 0%, transparent 70%);
+    -webkit-mask-image: radial-gradient(circle at top right, black 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    border-radius: var(--radius-2xl);
+}
+
+/* Card 2 - SEO - Dense Small Dots */
+.service-feature-card[data-delay="2"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 75%;
+    height: 75%;
+    background-image: radial-gradient(circle, rgba(201, 168, 124, 0.30) 1px, transparent 1px);
+    background-size: 8px 8px;
+    mask-image: radial-gradient(circle at top right, black 0%, transparent 65%);
+    -webkit-mask-image: radial-gradient(circle at top right, black 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+    border-radius: var(--radius-2xl);
+}
+
+/* Card 3 - Video Editing - Diagonal Lines */
+.service-feature-card[data-delay="3"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 75%;
+    height: 75%;
+    background-image: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 10px,
+        rgba(201, 168, 124, 0.28) 10px,
+        rgba(201, 168, 124, 0.28) 11px
+    );
+    mask-image: radial-gradient(circle at top right, black 0%, transparent 70%);
+    -webkit-mask-image: radial-gradient(circle at top right, black 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    border-radius: var(--radius-2xl);
+}
+
+/* Card 4 - Brand Identity - Clustered Dots */
+.service-feature-card[data-delay="4"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 75%;
+    height: 75%;
+    background: radial-gradient(circle at top right,
+        radial-gradient(circle, rgba(201, 168, 124, 0.2) 1px, transparent 1px) 0 0 / 15px 15px,
+        transparent
+    );
+    background-image: radial-gradient(circle, rgba(201, 168, 124, 0.30) 1px, transparent 1px);
+    background-size: 12px 12px;
+    mask-image: radial-gradient(circle at top right, black 0%, transparent 70%);
+    -webkit-mask-image: radial-gradient(circle at top right, black 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    border-radius: var(--radius-2xl);
+}
+
+/* Card 5 - Brand Strategy - Grid Pattern */
+.service-feature-card[data-delay="5"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 75%;
+    height: 75%;
+    background-image:
+        linear-gradient(90deg, rgba(201, 168, 124, 0.30) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(201, 168, 124, 0.30) 1px, transparent 1px);
+    background-size: 18px 18px;
+    mask-image: radial-gradient(circle at top right, black 0%, transparent 70%);
+    -webkit-mask-image: radial-gradient(circle at top right, black 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    border-radius: var(--radius-2xl);
+}
+
+/* Card 6 - E-Commerce - Dense Small Dots */
+.service-feature-card[data-delay="6"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 75%;
+    height: 75%;
+    background-image: radial-gradient(circle, rgba(201, 168, 124, 0.30) 1px, transparent 1px);
+    background-size: 8px 8px;
+    mask-image: radial-gradient(circle at top right, black 0%, transparent 65%);
+    -webkit-mask-image: radial-gradient(circle at top right, black 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+    border-radius: var(--radius-2xl);
+}
+
+/* Card 7 - Creative - Diagonal Lines */
+.service-feature-card[data-delay="7"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 75%;
+    height: 75%;
+    background-image: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 10px,
+        rgba(201, 168, 124, 0.28) 10px,
+        rgba(201, 168, 124, 0.28) 11px
+    );
+    mask-image: radial-gradient(circle at top right, black 0%, transparent 70%);
+    -webkit-mask-image: radial-gradient(circle at top right, black 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    border-radius: var(--radius-2xl);
+}
+
 /* Card Art Container */
 .card-art {
     position: absolute;
@@ -2062,7 +2221,7 @@ body {
     }
 
     .section-title-large {
-        font-size: var(--text-3xl);
+        font-size: 2.25rem;  /* 36px - increased for mobile headers */
     }
 }
 
@@ -4196,9 +4355,19 @@ h1, h2, h3, h4, h5, h6,
 }
 
 @media (max-width: 640px) {
+    .hero {
+        padding-top: calc(var(--header-height) + var(--space-2xl));
+    }
+
     .hero-title {
-        font-size: 2.5rem;  /* 40px */
-        line-height: 1.2;
+        font-size: 3rem;  /* 48px - increased from 40px */
+        line-height: 1.15;
+    }
+
+    .hero-description {
+        font-size: var(--text-sm);  /* Reduced from --text-lg */
+        line-height: 1.6;
+        margin-bottom: var(--space-xl);
     }
 
     .stat-number {
@@ -4213,5 +4382,14 @@ h1, h2, h3, h4, h5, h6,
         grid-template-columns: 1fr;
         gap: var(--space-md);
         padding: var(--space-lg);
+    }
+
+    /* Increase all section headers on mobile */
+    .section-title {
+        font-size: 2rem;  /* 32px - increased from 28px */
+    }
+
+    .section-title-large {
+        font-size: 2.25rem;  /* 36px - increased from default mobile size */
     }
 }
