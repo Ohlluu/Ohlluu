@@ -877,10 +877,42 @@ window.closeProjectModal = function() {
     }
 };
 
+// ===== FAQ ACCORDION =====
+class FAQAccordion {
+    constructor() {
+        this.items = document.querySelectorAll('.faq-item');
+        this.init();
+    }
+
+    init() {
+        this.items.forEach(item => {
+            const question = item.querySelector('.faq-question');
+
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+
+                // Close all other items
+                this.items.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+
+                // Toggle current item
+                if (isActive) {
+                    item.classList.remove('active');
+                } else {
+                    item.classList.add('active');
+                }
+            });
+        });
+    }
+}
+
 // ===== INITIALIZATION =====
 document.addEventListener('DOMContentLoaded', () => {
     console.log('🚀 Ohlluu Portfolio - Initializing...');
-    
+
     // Initialize all components
     const loadingScreen = new LoadingScreen();
     const navigation = new Navigation();
@@ -890,6 +922,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const formHandler = new FormHandler();
     const scrollAnimations = new ScrollAnimations();
     const performanceMonitor = new PerformanceMonitor();
+    const faqAccordion = new FAQAccordion();
     
     // Make modal manager globally available
     window.modalManager = modalManager;
