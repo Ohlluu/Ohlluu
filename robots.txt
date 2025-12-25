@@ -11,7 +11,7 @@ Allow: /*.css$
 Allow: /*.js$
 
 # Sitemap location
-Sitemap: https://ohlluu.com/sitemap.xml
+Sitemap: https://ohlluudev.com/sitemap.xml
 
 # Crawl delay (be respectful to server)
 Crawl-delay: 1
