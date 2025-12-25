@@ -2379,8 +2379,8 @@ body {
     right: -1px;
     width: 50px;
     height: 50px;
-    border-top: 3px solid var(--primary);
-    border-right: 3px solid var(--primary);
+    border-top: 2px solid var(--primary);
+    border-right: 2px solid var(--primary);
     border-radius: 0 var(--radius-xl) 0 0;
     transition: all 0.5s var(--ease-out);
 }
@@ -2393,8 +2393,8 @@ body {
     left: -1px;
     width: 50px;
     height: 50px;
-    border-bottom: 3px solid var(--primary);
-    border-left: 3px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
+    border-left: 2px solid var(--primary);
     border-radius: 0 0 0 var(--radius-xl);
     transition: all 0.5s var(--ease-out);
 }
@@ -2407,7 +2407,7 @@ body {
 
 .process-step:hover .step-content::before,
 .process-step:hover .step-content::after {
-    border-width: 4px;
+    border-width: 3px;
 }
 
 .step-title {
@@ -2533,6 +2533,87 @@ body {
     transform: translateY(40px);
     animation: fadeInUp 0.8s var(--ease-out) forwards;
     transition: all 0.5s var(--ease-out);
+}
+
+/* Abstract Pattern Backgrounds for Why Cards */
+/* Card 1 - Diagonal Lines Pattern (Bottom Left) */
+.why-card[data-delay="0"]::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60%;
+    height: 60%;
+    background-image: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 12px,
+        rgba(201, 168, 124, 0.12) 12px,
+        rgba(201, 168, 124, 0.12) 13px
+    );
+    mask-image: radial-gradient(circle at bottom left, black 0%, transparent 70%);
+    -webkit-mask-image: radial-gradient(circle at bottom left, black 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    border-radius: var(--radius-2xl);
+}
+
+/* Card 2 - Dense Dots Pattern (Bottom Right) */
+.why-card[data-delay="1"]::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60%;
+    height: 60%;
+    background-image: radial-gradient(circle, rgba(201, 168, 124, 0.15) 1.5px, transparent 1.5px);
+    background-size: 10px 10px;
+    mask-image: radial-gradient(circle at bottom right, black 0%, transparent 65%);
+    -webkit-mask-image: radial-gradient(circle at bottom right, black 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+    border-radius: var(--radius-2xl);
+}
+
+/* Card 3 - Grid Pattern (Bottom Left) */
+.why-card[data-delay="2"]::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60%;
+    height: 60%;
+    background-image:
+        linear-gradient(90deg, rgba(201, 168, 124, 0.15) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(201, 168, 124, 0.15) 1px, transparent 1px);
+    background-size: 20px 20px;
+    mask-image: radial-gradient(circle at bottom left, black 0%, transparent 70%);
+    -webkit-mask-image: radial-gradient(circle at bottom left, black 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    border-radius: var(--radius-2xl);
+}
+
+/* Card 4 - Wavy Lines Pattern (Bottom Right) */
+.why-card[data-delay="3"]::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60%;
+    height: 60%;
+    background-image:
+        repeating-radial-gradient(circle at 80% 80%,
+            transparent 0px,
+            transparent 18px,
+            rgba(201, 168, 124, 0.12) 18px,
+            rgba(201, 168, 124, 0.12) 20px
+        );
+    mask-image: radial-gradient(circle at bottom right, black 0%, transparent 70%);
+    -webkit-mask-image: radial-gradient(circle at bottom right, black 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    border-radius: var(--radius-2xl);
 }
 
 .why-card[data-delay="0"] { animation-delay: 0.1s; }
