@@ -2377,10 +2377,10 @@ body {
     position: absolute;
     top: -1px;
     right: -1px;
-    width: 50px;
-    height: 50px;
-    border-top: 2px solid var(--primary);
-    border-right: 2px solid var(--primary);
+    width: 40px;
+    height: 40px;
+    border-top: 1.5px solid var(--primary);
+    border-right: 1.5px solid var(--primary);
     border-radius: 0 var(--radius-xl) 0 0;
     transition: all 0.5s var(--ease-out);
 }
@@ -2391,10 +2391,10 @@ body {
     position: absolute;
     bottom: -1px;
     left: -1px;
-    width: 50px;
-    height: 50px;
-    border-bottom: 2px solid var(--primary);
-    border-left: 2px solid var(--primary);
+    width: 40px;
+    height: 40px;
+    border-bottom: 1.5px solid var(--primary);
+    border-left: 1.5px solid var(--primary);
     border-radius: 0 0 0 var(--radius-xl);
     transition: all 0.5s var(--ease-out);
 }
@@ -2407,7 +2407,7 @@ body {
 
 .process-step:hover .step-content::before,
 .process-step:hover .step-content::after {
-    border-width: 3px;
+    border-width: 2px;
 }
 
 .step-title {
