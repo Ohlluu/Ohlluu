@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO Tags -->
+    <title>JavaScript Performance Tips Every Developer Should Know | Ohlluu</title>
+    <meta name="description" content="Master JavaScript optimization with practical performance tips. Learn to write faster, more efficient code that delivers exceptional user experiences across all devices.">
+    <meta name="keywords" content="JavaScript performance, code optimization, web performance, JavaScript tips, efficient coding">
+    <meta name="author" content="Ohlluu">
+    <link rel="canonical" href="https://ohlluu.com/blog-javascript-performance.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ohlluu.com/blog-javascript-performance.html">
+    <meta property="og:title" content="JavaScript Performance Tips Every Developer Should Know">
+    <meta property="og:description" content="Master JavaScript optimization with these practical performance tips for faster, more efficient code.">
+    <meta property="og:image" content="https://ohlluu.com/assets/og-image.jpg">
+
+    <!-- Article Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "JavaScript Performance Tips Every Developer Should Know",
+        "description": "Practical JavaScript performance optimization techniques",
+        "author": {
+            "@type": "Person",
+            "name": "Ohlluu"
+        },
+        "datePublished": "2024-12-15",
+        "dateModified": "2024-12-15",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Ohlluu"
+        }
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JER8088KML"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JER8088KML');
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-text">OHLLUU</span>
+                <div class="logo-dot"></div>
+            </a>
+
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#services-main" class="nav-link">Services</a>
+                <a href="index.html#process" class="nav-link">Process</a>
+                <a href="index.html#why-choose-us" class="nav-link">About</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <div class="toggle-track">
+                        <div class="toggle-thumb">
+                            <span class="toggle-icon">🌙</span>
+                        </div>
+                    </div>
+                </button>
+            </div>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <article class="blog-post">
+        <header class="blog-post-header">
+            <div class="container-small">
+                <a href="blog.html" class="blog-back-link">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"/>
+                    </svg>
+                    Back to Blog
+                </a>
+                <div class="blog-post-meta">
+                    <span class="blog-category">Development</span>
+                    <span class="blog-date">December 15, 2024</span>
+                    <span class="blog-reading-time">11 min read</span>
+                </div>
+                <h1 class="blog-post-title">JavaScript Performance Tips Every Developer Should Know</h1>
+                <p class="blog-post-intro">JavaScript performance directly impacts user experience and conversion rates. Slow code leads to frustrated users and abandoned pages. Let's explore practical techniques to write faster, more efficient JavaScript.</p>
+            </div>
+        </header>
+
+        <div class="blog-post-content">
+            <div class="container-small">
+                <section class="content-section">
+                    <h2>Why JavaScript Performance Matters</h2>
+                    <p>JavaScript is often the main culprit behind slow websites:</p>
+                    <ul>
+                        <li><strong>Parse and compile time:</strong> JavaScript must be downloaded, parsed, compiled, and executed</li>
+                        <li><strong>Blocking execution:</strong> JavaScript can block page rendering</li>
+                        <li><strong>Memory consumption:</strong> Inefficient code can cause memory leaks</li>
+                        <li><strong>Battery drain:</strong> Poor JS performance drains mobile device batteries</li>
+                    </ul>
+                    <p>A 100ms delay in JavaScript execution can reduce conversions by 1%. Optimize your code, improve your business.</p>
+                </section>
+
+                <section class="content-section">
+                    <h2>1. Minimize DOM Manipulation</h2>
+                    <p>DOM operations are expensive. Minimize them for better performance:</p>
+                    <p><strong>Bad:</strong></p>
+                    <div class="code-block">
+                        <code>// Multiple reflows<br>
+for (let i = 0; i < 100; i++) {<br>
+  &nbsp;&nbsp;document.getElementById('list').innerHTML += '&lt;li&gt;' + i + '&lt;/li&gt;';<br>
+}</code>
+                    </div>
+                    <p><strong>Good:</strong></p>
+                    <div class="code-block">
+                        <code>// Single reflow<br>
+let html = '';<br>
+for (let i = 0; i < 100; i++) {<br>
+  &nbsp;&nbsp;html += '&lt;li&gt;' + i + '&lt;/li&gt;';<br>
+}<br>
+document.getElementById('list').innerHTML = html;</code>
+                    </div>
+                    <p><strong>Even better:</strong> Use DocumentFragment or insertAdjacentHTML for optimal performance.</p>
+                </section>
+
+                <section class="content-section">
+                    <h2>2. Debounce and Throttle Events</h2>
+                    <p>Limit how often expensive operations run during high-frequency events:</p>
+                    <p><strong>Debounce:</strong> Wait for user to stop before executing</p>
+                    <div class="code-block">
+                        <code>function debounce(func, delay) {<br>
+  &nbsp;&nbsp;let timeout;<br>
+  &nbsp;&nbsp;return function(...args) {<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;clearTimeout(timeout);<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;timeout = setTimeout(() => func.apply(this, args), delay);<br>
+  &nbsp;&nbsp;};<br>
+}</code>
+                    </div>
+                    <p><strong>Throttle:</strong> Execute at regular intervals</p>
+                    <div class="code-block">
+                        <code>function throttle(func, limit) {<br>
+  &nbsp;&nbsp;let inThrottle;<br>
+  &nbsp;&nbsp;return function(...args) {<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;if (!inThrottle) {<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;func.apply(this, args);<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inThrottle = true;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setTimeout(() => inThrottle = false, limit);<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+  &nbsp;&nbsp;};<br>
+}</code>
+                    </div>
+                    <p><strong>Use cases:</strong> Debounce for search inputs, throttle for scroll events.</p>
+                </section>
+
+                <section class="content-section">
+                    <h2>3. Use Event Delegation</h2>
+                    <p>Attach one event listener instead of many:</p>
+                    <p><strong>Bad:</strong></p>
+                    <div class="code-block">
+                        <code>// 1000 event listeners<br>
+document.querySelectorAll('.button').forEach(btn => {<br>
+  &nbsp;&nbsp;btn.addEventListener('click', handleClick);<br>
+});</code>
+                    </div>
+                    <p><strong>Good:</strong></p>
+                    <div class="code-block">
+                        <code>// 1 event listener<br>
+document.getElementById('container').addEventListener('click', (e) => {<br>
+  &nbsp;&nbsp;if (e.target.matches('.button')) {<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;handleClick(e);<br>
+  &nbsp;&nbsp;}<br>
+});</code>
+                    </div>
+                    <p><strong>Benefits:</strong> Less memory usage, better performance, handles dynamic elements automatically.</p>
+                </section>
+
+                <section class="content-section">
+                    <h2>4. Optimize Loops</h2>
+                    <p>Small loop optimizations add up in tight iterations:</p>
+                    <p><strong>Cache array length:</strong></p>
+                    <div class="code-block">
+                        <code>// Good - length cached<br>
+const len = array.length;<br>
+for (let i = 0; i < len; i++) {<br>
+  &nbsp;&nbsp;// Process array[i]<br>
+}</code>
+                    </div>
+                    <p><strong>Use array methods appropriately:</strong></p>
+                    <ul>
+                        <li><code>for</code> loop: Fastest for simple iterations</li>
+                        <li><code>forEach</code>: Clean, but slower than for loop</li>
+                        <li><code>map</code>: When you need a new array</li>
+                        <li><code>filter</code>: When you need a subset</li>
+                        <li><code>reduce</code>: For accumulation</li>
+                    </ul>
+                    <p><strong>Avoid nested loops:</strong> Consider using hash maps or Set for lookups instead of nested loops.</p>
+                </section>
+
+                <section class="content-section">
+                    <h2>5. Use Web Workers for Heavy Computation</h2>
+                    <p>Move intensive operations off the main thread:</p>
+                    <div class="code-block">
+                        <code>// main.js<br>
+const worker = new Worker('worker.js');<br>
+worker.postMessage({data: largeDataset});<br>
+worker.onmessage = (e) => {<br>
+  &nbsp;&nbsp;console.log('Result:', e.data);<br>
+};</code>
+                    </div>
+                    <p><strong>Best for:</strong> Data processing, image manipulation, complex calculations, anything that takes >50ms.</p>
+                </section>
+
+                <section class="content-section">
+                    <h2>6. Lazy Load Code with Dynamic Imports</h2>
+                    <p>Load JavaScript only when needed:</p>
+                    <div class="code-block">
+                        <code>// Load on demand<br>
+button.addEventListener('click', async () => {<br>
+  &nbsp;&nbsp;const module = await import('./heavy-feature.js');<br>
+  &nbsp;&nbsp;module.initialize();<br>
+});</code>
+                    </div>
+                    <p><strong>Benefits:</strong> Smaller initial bundle, faster page load, on-demand functionality.</p>
+                </section>
+
+                <section class="content-section">
+                    <h2>7. Avoid Memory Leaks</h2>
+                    <p>Common causes and solutions:</p>
+                    <ul>
+                        <li><strong>Remove event listeners:</strong> Clean up when elements are removed</li>
+                        <li><strong>Clear timers:</strong> Always clearTimeout and clearInterval</li>
+                        <li><strong>Detach DOM references:</strong> Don't keep references to removed elements</li>
+                        <li><strong>Close observers:</strong> Disconnect IntersectionObserver and MutationObserver</li>
+                    </ul>
+                    <div class="code-block">
+                        <code>// Good cleanup<br>
+function cleanup() {<br>
+  &nbsp;&nbsp;element.removeEventListener('click', handler);<br>
+  &nbsp;&nbsp;clearInterval(intervalId);<br>
+  &nbsp;&nbsp;observer.disconnect();<br>
+}</code>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>8. Use RequestAnimationFrame for Animations</h2>
+                    <p>Sync with the browser's repaint cycle:</p>
+                    <p><strong>Bad:</strong></p>
+                    <div class="code-block">
+                        <code>setInterval(() => {<br>
+  &nbsp;&nbsp;element.style.left = position + 'px';<br>
+}, 16); // Trying to hit 60fps</code>
+                    </div>
+                    <p><strong>Good:</strong></p>
+                    <div class="code-block">
+                        <code>function animate() {<br>
+  &nbsp;&nbsp;element.style.left = position + 'px';<br>
+  &nbsp;&nbsp;requestAnimationFrame(animate);<br>
+}<br>
+requestAnimationFrame(animate);</code>
+                    </div>
+                    <p><strong>Why:</strong> Syncs with display refresh, pauses when tab is hidden, prevents frame drops.</p>
+                </section>
+
+                <section class="content-section">
+                    <h2>9. Optimize Object and Array Operations</h2>
+                    <p>Choose the right data structure:</p>
+                    <ul>
+                        <li><strong>Map vs Object:</strong> Use Map for frequent additions/deletions</li>
+                        <li><strong>Set vs Array:</strong> Use Set for unique values and fast lookups</li>
+                        <li><strong>WeakMap/WeakSet:</strong> For objects that can be garbage collected</li>
+                    </ul>
+                    <div class="code-block">
+                        <code>// Fast lookups with Set<br>
+const uniqueIds = new Set([1, 2, 3, 4, 5]);<br>
+uniqueIds.has(3); // O(1) vs array.includes() O(n)</code>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>10. Use Efficient String Concatenation</h2>
+                    <p>For building large strings:</p>
+                    <p><strong>Slow:</strong></p>
+                    <div class="code-block">
+                        <code>let str = '';<br>
+for (let i = 0; i < 10000; i++) {<br>
+  &nbsp;&nbsp;str += 'text';<br>
+}</code>
+                    </div>
+                    <p><strong>Fast:</strong></p>
+                    <div class="code-block">
+                        <code>const arr = [];<br>
+for (let i = 0; i < 10000; i++) {<br>
+  &nbsp;&nbsp;arr.push('text');<br>
+}<br>
+const str = arr.join('');</code>
+                    </div>
+                    <p><strong>Modern:</strong> Template literals are optimized in modern browsers for most use cases.</p>
+                </section>
+
+                <section class="content-section">
+                    <h2>11. Minimize Reflows and Repaints</h2>
+                    <p>Batch DOM changes to minimize layout recalculations:</p>
+                    <ul>
+                        <li><strong>Read then write:</strong> Batch all DOM reads, then all writes</li>
+                        <li><strong>Use classes:</strong> Change className instead of individual styles</li>
+                        <li><strong>Position fixed/absolute:</strong> Take elements out of flow for animations</li>
+                        <li><strong>Use transform and opacity:</strong> These don't trigger reflow</li>
+                    </ul>
+                    <div class="code-block">
+                        <code>// Bad - causes multiple reflows<br>
+el.style.width = '100px';<br>
+console.log(el.offsetWidth); // Read<br>
+el.style.height = '100px';<br>
+<br>
+// Good - batch operations<br>
+el.style.cssText = 'width: 100px; height: 100px;';<br>
+console.log(el.offsetWidth);</code>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>12. Use Intersection Observer for Lazy Loading</h2>
+                    <p>Efficient visibility detection without scroll event spam:</p>
+                    <div class="code-block">
+                        <code>const observer = new IntersectionObserver((entries) => {<br>
+  &nbsp;&nbsp;entries.forEach(entry => {<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;if (entry.isIntersecting) {<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loadContent(entry.target);<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;observer.unobserve(entry.target);<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+  &nbsp;&nbsp;});<br>
+});<br>
+<br>
+document.querySelectorAll('.lazy').forEach(el => {<br>
+  &nbsp;&nbsp;observer.observe(el);<br>
+});</code>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>13. Profile and Measure</h2>
+                    <p>Use browser DevTools to find bottlenecks:</p>
+                    <ul>
+                        <li><strong>Performance tab:</strong> Record and analyze runtime performance</li>
+                        <li><strong>Memory profiler:</strong> Find memory leaks</li>
+                        <li><strong>console.time():</strong> Measure specific operations</li>
+                        <li><strong>Performance API:</strong> Measure with precision</li>
+                    </ul>
+                    <div class="code-block">
+                        <code>console.time('operation');<br>
+// Your code here<br>
+console.timeEnd('operation');<br>
+<br>
+// Or use Performance API<br>
+const start = performance.now();<br>
+// Your code here<br>
+const duration = performance.now() - start;</code>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>14. Avoid Premature Optimization</h2>
+                    <p>Focus on these areas first:</p>
+                    <ol>
+                        <li><strong>Measure first:</strong> Identify actual bottlenecks</li>
+                        <li><strong>Fix the big wins:</strong> 80/20 rule applies</li>
+                        <li><strong>Maintain readability:</strong> Don't sacrifice maintainability for micro-optimizations</li>
+                        <li><strong>Test impact:</strong> Verify optimizations actually help</li>
+                    </ol>
+                    <p>"Premature optimization is the root of all evil" - Donald Knuth</p>
+                </section>
+
+                <section class="content-section">
+                    <h2>15. Modern JavaScript Features</h2>
+                    <p>Use optimized modern features:</p>
+                    <ul>
+                        <li><strong>Spread operator:</strong> Often more efficient than concat</li>
+                        <li><strong>Destructuring:</strong> Cleaner code, same performance</li>
+                        <li><strong>Optional chaining:</strong> Avoid unnecessary checks</li>
+                        <li><strong>Nullish coalescing:</strong> Better default values</li>
+                    </ul>
+                    <div class="code-block">
+                        <code>// Modern, efficient syntax<br>
+const name = user?.profile?.name ?? 'Guest';<br>
+const merged = {...defaults, ...options};</code>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>Performance Checklist</h2>
+                    <ul>
+                        <li>✓ Minimize DOM manipulation</li>
+                        <li>✓ Debounce/throttle high-frequency events</li>
+                        <li>✓ Use event delegation</li>
+                        <li>✓ Optimize loops and iterations</li>
+                        <li>✓ Offload heavy work to Web Workers</li>
+                        <li>✓ Lazy load code with dynamic imports</li>
+                        <li>✓ Prevent memory leaks</li>
+                        <li>✓ Use requestAnimationFrame for animations</li>
+                        <li>✓ Choose appropriate data structures</li>
+                        <li>✓ Batch DOM reads and writes</li>
+                        <li>✓ Profile and measure performance</li>
+                    </ul>
+                </section>
+
+                <section class="content-section">
+                    <h2>The Bottom Line</h2>
+                    <p>JavaScript performance optimization is about:</p>
+                    <ul>
+                        <li>Understanding the cost of operations</li>
+                        <li>Measuring before optimizing</li>
+                        <li>Focusing on user experience</li>
+                        <li>Balancing performance with maintainability</li>
+                    </ul>
+                    <p>Fast JavaScript leads to happy users, better SEO, and higher conversions.</p>
+                </section>
+
+                <section class="content-section">
+                    <h2>Need Help with JavaScript Performance?</h2>
+                    <p>Optimizing JavaScript can be complex. If you need expert help improving your web app's performance, <a href="index.html#contact">get in touch</a>. We build fast, efficient web applications that deliver exceptional user experiences.</p>
+                </section>
+
+                <div class="blog-post-footer">
+                    <a href="blog.html" class="btn btn-primary">Back to Blog</a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <h3 class="footer-logo">OHLLUU</h3>
+                        <p class="footer-tagline">Crafting digital experiences that convert</p>
+                    </div>
+                </div>
+
+                <div class="footer-links-grid">
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html" class="footer-link">Home</a></li>
+                            <li><a href="index.html#services-main" class="footer-link">Services</a></li>
+                            <li><a href="index.html#process" class="footer-link">Process</a></li>
+                            <li><a href="blog.html" class="footer-link">Blog</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Contact</h4>
+                        <ul class="footer-links">
+                            <li>
+                                <a href="mailto:ohlluumarketing@gmail.com" class="footer-link footer-contact-link">
+                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20" class="footer-icon">
+                                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                                    </svg>
+                                    ohlluumarketing@gmail.com
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    &copy; 2024 Ohlluu. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

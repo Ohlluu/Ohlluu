@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO Tags -->
+    <title>Complete SEO Checklist for New Websites in 2025 | Ohlluu</title>
+    <meta name="description" content="Launch your website with confidence using this comprehensive SEO checklist. Learn essential optimization steps from meta tags to structured data that will help you rank on Google.">
+    <meta name="keywords" content="SEO checklist, website SEO, new website optimization, on-page SEO, technical SEO, SEO guide 2025">
+    <meta name="author" content="Ohlluu">
+    <link rel="canonical" href="https://ohlluu.com/blog-seo-checklist.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ohlluu.com/blog-seo-checklist.html">
+    <meta property="og:title" content="Complete SEO Checklist for New Websites in 2025">
+    <meta property="og:description" content="Essential SEO optimization steps to launch your website successfully and rank on Google.">
+    <meta property="og:image" content="https://ohlluu.com/assets/og-image.jpg">
+
+    <!-- Article Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Complete SEO Checklist for New Websites in 2025",
+        "description": "Comprehensive SEO checklist covering everything from technical setup to content optimization",
+        "author": {
+            "@type": "Person",
+            "name": "Ohlluu"
+        },
+        "datePublished": "2024-12-20",
+        "dateModified": "2024-12-20",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Ohlluu"
+        }
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JER8088KML"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JER8088KML');
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-text">OHLLUU</span>
+                <div class="logo-dot"></div>
+            </a>
+
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#services-main" class="nav-link">Services</a>
+                <a href="index.html#process" class="nav-link">Process</a>
+                <a href="index.html#why-choose-us" class="nav-link">About</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <div class="toggle-track">
+                        <div class="toggle-thumb">
+                            <span class="toggle-icon">🌙</span>
+                        </div>
+                    </div>
+                </button>
+            </div>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <article class="blog-post">
+        <header class="blog-post-header">
+            <div class="container-small">
+                <a href="blog.html" class="blog-back-link">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"/>
+                    </svg>
+                    Back to Blog
+                </a>
+                <div class="blog-post-meta">
+                    <span class="blog-category">SEO</span>
+                    <span class="blog-date">December 20, 2024</span>
+                    <span class="blog-reading-time">10 min read</span>
+                </div>
+                <h1 class="blog-post-title">Complete SEO Checklist for New Websites</h1>
+                <p class="blog-post-intro">Launching a new website without proper SEO is like opening a store in the middle of nowhere. This comprehensive checklist will help you set the foundation for long-term search visibility and organic traffic growth.</p>
+            </div>
+        </header>
+
+        <div class="blog-post-content">
+            <div class="container-small">
+                <section class="content-section">
+                    <h2>Before Launch: Technical Foundation</h2>
+                    <p>Getting the technical basics right is crucial before your site goes live. These foundational elements will impact your SEO for years to come.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>1. HTTPS and Security</h3>
+                    <p>Google has confirmed HTTPS as a ranking signal. Every modern website should use HTTPS:</p>
+                    <ul>
+                        <li><strong>SSL Certificate:</strong> Install an SSL certificate (free from Let's Encrypt or provided by your host)</li>
+                        <li><strong>Force HTTPS:</strong> Redirect all HTTP traffic to HTTPS versions</li>
+                        <li><strong>Mixed content:</strong> Ensure all resources (images, scripts, CSS) load over HTTPS</li>
+                        <li><strong>HSTS:</strong> Consider implementing HTTP Strict Transport Security headers</li>
+                    </ul>
+                </section>
+
+                <section class="content-section">
+                    <h3>2. Mobile-Friendly Design</h3>
+                    <p>With Google's mobile-first indexing, your mobile experience determines your rankings:</p>
+                    <ul>
+                        <li><strong>Responsive design:</strong> Ensure your site adapts to all screen sizes</li>
+                        <li><strong>Touch-friendly elements:</strong> Buttons and links should be easy to tap</li>
+                        <li><strong>Readable text:</strong> Font sizes should be legible without zooming</li>
+                        <li><strong>Mobile speed:</strong> Test mobile performance specifically</li>
+                    </ul>
+                    <p><strong>Test your site:</strong> Use Google's Mobile-Friendly Test tool to verify.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>3. Site Speed Optimization</h3>
+                    <p>Page speed is a direct ranking factor. Target these benchmarks:</p>
+                    <ul>
+                        <li><strong>First Contentful Paint:</strong> Under 1.8 seconds</li>
+                        <li><strong>Largest Contentful Paint:</strong> Under 2.5 seconds</li>
+                        <li><strong>Time to Interactive:</strong> Under 3.8 seconds</li>
+                        <li><strong>Cumulative Layout Shift:</strong> Under 0.1</li>
+                    </ul>
+                </section>
+
+                <section class="content-section">
+                    <h3>4. XML Sitemap</h3>
+                    <p>Help search engines discover and understand your content:</p>
+                    <ul>
+                        <li><strong>Create sitemap.xml:</strong> List all important pages you want indexed</li>
+                        <li><strong>Include lastmod dates:</strong> Help search engines prioritize recently updated content</li>
+                        <li><strong>Set priorities:</strong> Indicate which pages are most important</li>
+                        <li><strong>Submit to Google Search Console:</strong> Speed up indexing</li>
+                    </ul>
+                </section>
+
+                <section class="content-section">
+                    <h3>5. Robots.txt File</h3>
+                    <p>Control how search engines crawl your site:</p>
+                    <ul>
+                        <li><strong>Allow all crawlers:</strong> Unless you have specific reasons to block them</li>
+                        <li><strong>Block admin areas:</strong> Keep private sections out of search results</li>
+                        <li><strong>Link to sitemap:</strong> Include your sitemap location</li>
+                        <li><strong>Test before launch:</strong> Use Google Search Console's robots.txt tester</li>
+                    </ul>
+                </section>
+
+                <section class="content-section">
+                    <h2>On-Page SEO Essentials</h2>
+                    <p>These elements need to be optimized on every important page of your website.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>6. Title Tags</h3>
+                    <p>The most important on-page SEO element:</p>
+                    <ul>
+                        <li><strong>Include target keyword:</strong> Preferably near the beginning</li>
+                        <li><strong>Keep under 60 characters:</strong> Avoid truncation in search results</li>
+                        <li><strong>Make them unique:</strong> Every page needs a distinct title</li>
+                        <li><strong>Include brand name:</strong> Usually at the end, separated by a pipe or dash</li>
+                    </ul>
+                    <p><strong>Example:</strong> "Complete SEO Checklist for New Websites | Ohlluu"</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>7. Meta Descriptions</h3>
+                    <p>While not a direct ranking factor, descriptions impact click-through rates:</p>
+                    <ul>
+                        <li><strong>Length:</strong> 150-160 characters (shows fully in search results)</li>
+                        <li><strong>Include keywords:</strong> They'll be bolded in search results</li>
+                        <li><strong>Compelling copy:</strong> Write to entice clicks, not just for SEO</li>
+                        <li><strong>Unique descriptions:</strong> Don't duplicate across pages</li>
+                    </ul>
+                </section>
+
+                <section class="content-section">
+                    <h3>8. Header Tags (H1-H6)</h3>
+                    <p>Proper header structure helps both users and search engines:</p>
+                    <ul>
+                        <li><strong>One H1 per page:</strong> Should match or closely relate to your title tag</li>
+                        <li><strong>Logical hierarchy:</strong> H2s under H1, H3s under H2s, etc.</li>
+                        <li><strong>Include keywords:</strong> Naturally incorporate target terms</li>
+                        <li><strong>Break up content:</strong> Make long content scannable</li>
+                    </ul>
+                </section>
+
+                <section class="content-section">
+                    <h3>9. URL Structure</h3>
+                    <p>Clean, descriptive URLs perform better:</p>
+                    <ul>
+                        <li><strong>Keep it short:</strong> 3-5 words maximum</li>
+                        <li><strong>Use hyphens:</strong> Not underscores, for word separation</li>
+                        <li><strong>Include keywords:</strong> Make URLs descriptive</li>
+                        <li><strong>Avoid parameters:</strong> Use clean URLs, not ?id=123</li>
+                    </ul>
+                    <p><strong>Good:</strong> /blog-seo-checklist.html<br><strong>Bad:</strong> /page.php?id=123&cat=blog</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>10. Image Optimization</h3>
+                    <p>Images need optimization for both speed and searchability:</p>
+                    <ul>
+                        <li><strong>Alt text:</strong> Describe images accurately (helps accessibility and SEO)</li>
+                        <li><strong>Descriptive filenames:</strong> Use keywords in file names (not IMG_1234.jpg)</li>
+                        <li><strong>Compress images:</strong> Reduce file sizes without losing quality</li>
+                        <li><strong>Responsive images:</strong> Serve appropriately sized images for each device</li>
+                    </ul>
+                </section>
+
+                <section class="content-section">
+                    <h3>11. Internal Linking</h3>
+                    <p>Internal links distribute page authority and help search engines discover content:</p>
+                    <ul>
+                        <li><strong>Link to important pages:</strong> From high-authority pages</li>
+                        <li><strong>Use descriptive anchor text:</strong> Avoid generic "click here" links</li>
+                        <li><strong>Logical structure:</strong> Create topic clusters and hub pages</li>
+                        <li><strong>Fix broken links:</strong> Regularly audit and fix 404s</li>
+                    </ul>
+                </section>
+
+                <section class="content-section">
+                    <h2>Content Optimization</h2>
+                    <p>Content is still king. Here's how to optimize it for search:</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>12. Keyword Research</h3>
+                    <p>Before writing, understand what people are searching for:</p>
+                    <ul>
+                        <li><strong>Search intent:</strong> Understand why people search for your keywords</li>
+                        <li><strong>Long-tail keywords:</strong> Target specific, lower-competition phrases</li>
+                        <li><strong>Search volume:</strong> Balance competition with traffic potential</li>
+                        <li><strong>Related keywords:</strong> Include semantic variations and related terms</li>
+                    </ul>
+                    <p><strong>Tools:</strong> Google Keyword Planner, Ahrefs, SEMrush, Ubersuggest</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>13. Content Quality</h3>
+                    <p>Google's algorithms increasingly reward high-quality, helpful content:</p>
+                    <ul>
+                        <li><strong>Comprehensive coverage:</strong> Answer the user's query thoroughly</li>
+                        <li><strong>Original insights:</strong> Don't just rehash what others have written</li>
+                        <li><strong>Accurate information:</strong> Fact-check and cite sources</li>
+                        <li><strong>Regular updates:</strong> Keep content fresh and current</li>
+                    </ul>
+                </section>
+
+                <section class="content-section">
+                    <h3>14. Content Length</h3>
+                    <p>While there's no magic number, longer content tends to rank better:</p>
+                    <ul>
+                        <li><strong>In-depth guides:</strong> 2000+ words for comprehensive topics</li>
+                        <li><strong>Blog posts:</strong> 1000-1500 words minimum</li>
+                        <li><strong>Product pages:</strong> 300-500 words of unique content</li>
+                        <li><strong>Quality over quantity:</strong> Don't add fluff just to hit word counts</li>
+                    </ul>
+                </section>
+
+                <section class="content-section">
+                    <h2>Advanced SEO Elements</h2>
+                </section>
+
+                <section class="content-section">
+                    <h3>15. Schema Markup (Structured Data)</h3>
+                    <p>Help search engines understand your content and enable rich results:</p>
+                    <ul>
+                        <li><strong>Organization schema:</strong> For business information</li>
+                        <li><strong>Article schema:</strong> For blog posts and news content</li>
+                        <li><strong>Product schema:</strong> For e-commerce sites</li>
+                        <li><strong>Local business schema:</strong> For businesses with physical locations</li>
+                    </ul>
+                    <p><strong>Test your markup:</strong> Use Google's Rich Results Test tool</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>16. Open Graph Tags</h3>
+                    <p>Control how your content appears on social media:</p>
+                    <ul>
+                        <li><strong>og:title:</strong> Title for social shares</li>
+                        <li><strong>og:description:</strong> Description for social posts</li>
+                        <li><strong>og:image:</strong> Image that appears with shares (1200x630px optimal)</li>
+                        <li><strong>og:type:</strong> Content type (website, article, etc.)</li>
+                    </ul>
+                </section>
+
+                <section class="content-section">
+                    <h3>17. Canonical Tags</h3>
+                    <p>Prevent duplicate content issues:</p>
+                    <ul>
+                        <li><strong>Self-referencing canonicals:</strong> Every page should have one</li>
+                        <li><strong>Consolidate similar pages:</strong> Point variations to a single authoritative version</li>
+                        <li><strong>Consistent with redirects:</strong> Don't canonicalize to pages that redirect</li>
+                    </ul>
+                </section>
+
+                <section class="content-section">
+                    <h2>After Launch: Setup and Monitoring</h2>
+                </section>
+
+                <section class="content-section">
+                    <h3>18. Google Search Console</h3>
+                    <p>Essential free tool for monitoring search performance:</p>
+                    <ul>
+                        <li><strong>Verify ownership:</strong> Add and verify your property</li>
+                        <li><strong>Submit sitemap:</strong> Help Google discover your content</li>
+                        <li><strong>Monitor indexing:</strong> Check which pages are indexed</li>
+                        <li><strong>Track performance:</strong> See which queries bring traffic</li>
+                    </ul>
+                </section>
+
+                <section class="content-section">
+                    <h3>19. Google Analytics</h3>
+                    <p>Understand how users interact with your site:</p>
+                    <ul>
+                        <li><strong>Set up GA4:</strong> The latest version of Google Analytics</li>
+                        <li><strong>Track conversions:</strong> Set up goals and events</li>
+                        <li><strong>Monitor behavior:</strong> See how users navigate your site</li>
+                        <li><strong>Analyze traffic sources:</strong> Understand where visitors come from</li>
+                    </ul>
+                </section>
+
+                <section class="content-section">
+                    <h3>20. Local SEO (If Applicable)</h3>
+                    <p>For businesses with physical locations:</p>
+                    <ul>
+                        <li><strong>Google Business Profile:</strong> Claim and optimize your listing</li>
+                        <li><strong>NAP consistency:</strong> Name, Address, Phone consistent across the web</li>
+                        <li><strong>Local citations:</strong> Get listed in relevant directories</li>
+                        <li><strong>Local schema:</strong> Add LocalBusiness structured data</li>
+                    </ul>
+                </section>
+
+                <section class="content-section">
+                    <h2>Ongoing SEO Maintenance</h2>
+                    <p>SEO isn't a one-time task. Schedule these regular activities:</p>
+                    <ul>
+                        <li><strong>Weekly:</strong> Monitor Search Console for issues and new opportunities</li>
+                        <li><strong>Monthly:</strong> Review analytics, update old content, fix broken links</li>
+                        <li><strong>Quarterly:</strong> Audit technical SEO, refresh keyword strategy</li>
+                        <li><strong>Annually:</strong> Comprehensive site audit and strategy review</li>
+                    </ul>
+                </section>
+
+                <section class="content-section">
+                    <h2>Common SEO Mistakes to Avoid</h2>
+                    <ul>
+                        <li><strong>Keyword stuffing:</strong> Write naturally for humans first</li>
+                        <li><strong>Buying links:</strong> Focus on earning quality backlinks</li>
+                        <li><strong>Duplicate content:</strong> Ensure each page has unique content</li>
+                        <li><strong>Ignoring mobile:</strong> Mobile-first is not optional</li>
+                        <li><strong>Slow site speed:</strong> Performance impacts rankings directly</li>
+                        <li><strong>No analytics:</strong> You can't improve what you don't measure</li>
+                    </ul>
+                </section>
+
+                <section class="content-section">
+                    <h2>Your SEO Launch Checklist</h2>
+                    <p>Use this quick checklist before launching your site:</p>
+                    <ul>
+                        <li>✓ HTTPS enabled and forced</li>
+                        <li>✓ Mobile-friendly responsive design</li>
+                        <li>✓ Page speed optimized (LCP under 2.5s)</li>
+                        <li>✓ XML sitemap created and submitted</li>
+                        <li>✓ Robots.txt configured correctly</li>
+                        <li>✓ Title tags and meta descriptions on all pages</li>
+                        <li>✓ Proper header hierarchy (H1-H6)</li>
+                        <li>✓ Clean, keyword-rich URLs</li>
+                        <li>✓ Images optimized with alt text</li>
+                        <li>✓ Internal linking structure established</li>
+                        <li>✓ Schema markup implemented</li>
+                        <li>✓ Open Graph tags added</li>
+                        <li>✓ Canonical tags on all pages</li>
+                        <li>✓ Google Search Console set up</li>
+                        <li>✓ Google Analytics configured</li>
+                    </ul>
+                </section>
+
+                <section class="content-section">
+                    <h2>Need Professional SEO Help?</h2>
+                    <p>SEO can be overwhelming, especially when you're trying to run a business at the same time. If you'd like expert help optimizing your website for search engines, <a href="index.html#contact">let's talk</a>. We specialize in building SEO-optimized websites that attract organic traffic and convert visitors into customers.</p>
+                </section>
+
+                <div class="blog-post-footer">
+                    <a href="blog.html" class="btn btn-primary">Back to Blog</a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <h3 class="footer-logo">OHLLUU</h3>
+                        <p class="footer-tagline">Crafting digital experiences that convert</p>
+                    </div>
+                </div>
+
+                <div class="footer-links-grid">
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html" class="footer-link">Home</a></li>
+                            <li><a href="index.html#services-main" class="footer-link">Services</a></li>
+                            <li><a href="index.html#process" class="footer-link">Process</a></li>
+                            <li><a href="blog.html" class="footer-link">Blog</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Contact</h4>
+                        <ul class="footer-links">
+                            <li>
+                                <a href="mailto:ohlluumarketing@gmail.com" class="footer-link footer-contact-link">
+                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20" class="footer-icon">
+                                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                                    </svg>
+                                    ohlluumarketing@gmail.com
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    &copy; 2024 Ohlluu. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
