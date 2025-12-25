@@ -1,13 +1,30 @@
+# Robots.txt for Ohlluu.com
+# Allow all search engines to crawl the site
+
 User-agent: *
 Allow: /
 
-# Sitemap
+# Allow crawling of CSS and JavaScript for better indexing
+Allow: /styles.css
+Allow: /script.js
+Allow: /*.css$
+Allow: /*.js$
+
+# Sitemap location
 Sitemap: https://ohlluu.com/sitemap.xml
 
-# Crawl delay (be respectful)
+# Crawl delay (be respectful to server)
 Crawl-delay: 1
 
 # Block unwanted paths
 Disallow: /assets/temp/
 Disallow: /node_modules/
 Disallow: /.git/
+Disallow: /*.log$
+
+# Block bad bots (optional - uncomment if needed)
+# User-agent: AhrefsBot
+# Crawl-delay: 10
+
+# User-agent: SemrushBot
+# Crawl-delay: 10
