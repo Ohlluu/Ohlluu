@@ -2227,7 +2227,7 @@ body {
 
 /* ===== PORTFOLIO SECTION ===== */
 .portfolio {
-    padding: var(--space-3xl) 0;
+    padding: var(--space-2xl) 0;
     background: linear-gradient(135deg,
         rgba(201, 168, 124, 0.03) 0%,
         rgba(255, 255, 255, 0) 50%,
@@ -2435,7 +2435,7 @@ body {
 
 /* ===== PROCESS SECTION ===== */
 .process {
-    padding: var(--space-3xl) 0;
+    padding: var(--space-2xl) 0;
     background: var(--bg-primary);
     position: relative;
     overflow: hidden;
