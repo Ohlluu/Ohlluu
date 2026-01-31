@@ -2227,7 +2227,7 @@ body {
 
 /* ===== PORTFOLIO SECTION ===== */
 .portfolio {
-    padding: var(--space-5xl) 0;
+    padding: var(--space-3xl) 0;
     background: linear-gradient(135deg,
         rgba(201, 168, 124, 0.03) 0%,
         rgba(255, 255, 255, 0) 50%,
@@ -2392,7 +2392,7 @@ body {
 /* Portfolio Responsive - Mobile */
 @media (max-width: 640px) {
     .portfolio {
-        padding: var(--space-4xl) 0;
+        padding: var(--space-2xl) 0;
     }
 
     .portfolio-grid {
@@ -2424,7 +2424,7 @@ body {
 
 /* ===== PROCESS SECTION ===== */
 .process {
-    padding: var(--space-5xl) 0;
+    padding: var(--space-3xl) 0;
     background: var(--bg-primary);
     position: relative;
     overflow: hidden;
