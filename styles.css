@@ -2403,20 +2403,20 @@ body {
 /* Portfolio Responsive - Mobile */
 @media (max-width: 640px) {
     .portfolio {
-        padding: var(--space-2xl) 0;
+        padding: var(--space-xl) 0;
     }
 
     .portfolio-grid {
         grid-template-columns: 1fr;
-        gap: var(--space-lg);
+        gap: var(--space-md);
     }
 
     .portfolio-image-wrapper {
-        height: 220px;
+        height: 200px;
     }
 
     .portfolio-content {
-        padding: var(--space-lg);
+        padding: var(--space-md);
     }
 
     .portfolio-title {
@@ -2425,11 +2425,16 @@ body {
 
     .portfolio-description {
         font-size: var(--text-sm);
+        line-height: 1.5;
     }
 
     .portfolio-tag {
         font-size: var(--text-xs);
-        padding: 6px var(--space-xs);
+        padding: 4px 8px;
+    }
+
+    .portfolio-tags {
+        gap: 6px;
     }
 }
 
