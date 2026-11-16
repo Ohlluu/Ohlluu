@@ -1,0 +1,10 @@
+.env*
+.dev.vars*
+.DS_Store
+**/.DS_Store
+tests/
+email-worker/
+EMAIL-SETUP.md
+README.md
+SEO-SETUP-GUIDE.md
+public/

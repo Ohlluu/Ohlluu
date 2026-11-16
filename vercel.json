@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "npm run build",
+  "outputDirectory": "public",
+  "functions": {
+    "api/contact.mjs": { "maxDuration": 30 }
+  },
+  "headers": [
+    { "source": "/contact-config.js", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] }
+  ]
+}

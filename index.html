@@ -849,33 +849,33 @@
                 </div>
                 
                 <div class="contact-form">
-                    <form id="contact-form" class="form" action="https://formspree.io/f/xnnbkzjp" method="POST">
+                    <form id="contact-form" class="form" action="#contact" method="POST">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name" class="form-label">Name *</label>
-                                <input type="text" id="name" name="name" class="form-input" required>
+                                <input type="text" id="name" name="name" class="form-input" maxlength="120" required>
                             </div>
                             <div class="form-group">
                                 <label for="email" class="form-label">Email *</label>
-                                <input type="email" id="email" name="email" class="form-input" required>
+                                <input type="email" id="email" name="email" class="form-input" maxlength="254" required>
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="phone" class="form-label">Phone Number *</label>
-                                <input type="tel" id="phone" name="phone" class="form-input" required>
+                                <input type="tel" id="phone" name="phone" class="form-input" maxlength="60" required>
                             </div>
                             <div class="form-group">
                                 <label for="company" class="form-label">Company</label>
-                                <input type="text" id="company" name="company" class="form-input">
+                                <input type="text" id="company" name="company" class="form-input" maxlength="200">
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="website" class="form-label">Current Website (Optional)</label>
-                                <input type="url" id="website" name="website" class="form-input" placeholder="https://yourwebsite.com">
+                                <input type="url" id="website" name="website" class="form-input" maxlength="500" placeholder="https://yourwebsite.com">
                             </div>
                             <div class="form-group">
                                 <label for="budget" class="form-label">Budget Range (Optional)</label>
@@ -906,9 +906,15 @@
 
                         <div class="form-group">
                             <label for="message" class="form-label">Project Details *</label>
-                            <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Tell us about your project, goals, and timeline..." required></textarea>
+                            <textarea id="message" name="message" class="form-textarea" maxlength="6000" rows="5" placeholder="Tell us about your project, goals, and timeline..." required></textarea>
                         </div>
                         
+                        <div hidden aria-hidden="true">
+                            <label for="company-site-check">Leave this field empty</label>
+                            <input id="company-site-check" name="_company_site" type="text" tabindex="-1" autocomplete="off">
+                        </div>
+                        <p class="form-status" role="status" aria-live="polite"></p>
+                        <noscript><p>Please enable JavaScript to send this form, or email <a href="mailto:info@ohlluudev.com">info@ohlluudev.com</a>.</p></noscript>
                         <button type="submit" class="btn btn-primary form-submit">
                             <span class="btn-text">Send Message</span>
                             <svg class="btn-arrow" width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
@@ -1029,6 +1035,7 @@
     </div>
 
     <!-- Scripts -->
-    <script src="script.js"></script>
+    <script src="contact-config.js?v=resend-20261116"></script>
+    <script src="script.js?v=resend-20261116"></script>
 </body>
 </html>

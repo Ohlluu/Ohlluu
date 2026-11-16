@@ -1,0 +1,8 @@
+.DS_Store
+node_modules/
+public/
+.wrangler/
+.dev.vars*
+.env*
+!.dev.vars.example
+.vercel

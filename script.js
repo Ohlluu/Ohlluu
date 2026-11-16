@@ -527,48 +527,55 @@ class FormHandler {
         }
     }
     
-    handleSubmit(e) {
+    async handleSubmit(e) {
         e.preventDefault();
-        
-        const formData = new FormData(this.contactForm);
-        const data = Object.fromEntries(formData);
-        
-        // Basic validation
-        if (!this.validateForm(data)) {
+        if (this.sending) return;
+        const endpoint = window.OHLLUU_CONTACT_ENDPOINT;
+        if (!endpoint || !(endpoint.startsWith('https://') || (endpoint.startsWith('/') && !endpoint.startsWith('//')))) {
+            this.showError('Please email info@ohlluudev.com directly while the contact form is being connected.');
             return;
         }
-        
-        // Show loading state
+        const data = Object.fromEntries(new FormData(this.contactForm));
+        if (!this.validateForm(data)) return;
+        const serialized = JSON.stringify(data);
+        // Keep the same ID after a network failure, so retrying cannot send twice.
+        if (!this.pendingRequest || this.pendingRequest.serialized !== serialized) {
+            this.pendingRequest = { serialized, id: crypto.randomUUID() };
+        }
+        this.contactForm.querySelector('.form-error')?.remove();
+        this.contactForm.querySelector('.form-status').textContent = '';
+        this.sending = true;
         this.showLoadingState();
-        
-        // Submit to Formspree
-        fetch('https://formspree.io/f/xnnbkzjp', {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
+        try {
+            const response = await fetch(endpoint, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ ...data, requestId: this.pendingRequest.id }),
+                signal: AbortSignal.timeout(20000)
+            });
+            const result = await response.json().catch(() => ({}));
+            if (!response.ok || result.ok !== true) {
+                throw new Error(result.error || 'Your message could not be sent. Please try again or email info@ohlluudev.com.');
             }
-        }).then(response => {
-            if (response.ok) {
-                this.showSuccessMessage();
-                this.contactForm.reset();
-            } else {
-                response.json().then(data => {
-                    if (data.errors) {
-                        this.showError('Form validation error. Please check your inputs and try again.');
-                    } else {
-                        this.showError('Failed to send message. Please try again or email me directly at ohlluumarketing@gmail.com');
-                    }
-                });
-            }
-        }).catch(error => {
-            console.error('Formspree Error:', error);
-            this.showError('Failed to send message. Please try again or email me directly at ohlluumarketing@gmail.com');
-        });
+            this.pendingRequest = null;
+            this.contactForm.reset();
+            this.showSuccessMessage();
+        } catch (error) {
+            this.showError(error.name === 'TimeoutError' || error instanceof TypeError
+                ? 'We could not confirm delivery. Please retry or email info@ohlluudev.com.'
+                : error.message);
+            this.contactForm.querySelector('.btn-text').textContent = 'Send Message';
+        } finally {
+            this.sending = false;
+            const button = this.contactForm.querySelector('.form-submit');
+            button.disabled = false;
+            button.style.opacity = '';
+            this.contactForm.removeAttribute('aria-busy');
+        }
     }
-    
+
     validateForm(data) {
-        if (!data.name || !data.email || !data.message) {
+        if (!data.name?.trim() || !data.email?.trim() || !data.phone?.trim() || !data.message?.trim()) {
             this.showError('Please fill in all required fields.');
             return false;
         }
@@ -587,8 +594,9 @@ class FormHandler {
     }
     
     showLoadingState() {
+        clearTimeout(this.successTimer);
         const submitButton = this.contactForm.querySelector('.form-submit');
-        const originalText = submitButton.querySelector('.btn-text').textContent;
+        this.contactForm.setAttribute('aria-busy', 'true');
         
         submitButton.disabled = true;
         submitButton.querySelector('.btn-text').textContent = 'Sending...';
@@ -600,9 +608,10 @@ class FormHandler {
         
         submitButton.disabled = false;
         submitButton.querySelector('.btn-text').textContent = 'Message Sent! ✓';
+        this.contactForm.querySelector('.form-status').textContent = 'Your message has been sent. I’ll be in touch soon.';
         submitButton.style.background = '#10B981';
         
-        setTimeout(() => {
+        this.successTimer = setTimeout(() => {
             submitButton.querySelector('.btn-text').textContent = 'Send Message';
             submitButton.style.background = '';
             submitButton.style.opacity = '';
@@ -616,6 +625,7 @@ class FormHandler {
         if (!errorElement) {
             errorElement = document.createElement('div');
             errorElement.className = 'form-error';
+            errorElement.setAttribute('role', 'alert');
             errorElement.style.cssText = `
                 color: #EF4444;
                 background: rgba(239, 68, 68, 0.1);
@@ -944,7 +954,7 @@ document.addEventListener('DOMContentLoaded', () => {
     - Accessibility best practices
     
     💼 Looking for a developer? Let's connect!
-    📧 ohlluumarketing@gmail.com
+    📧 info@ohlluudev.com
     `);
 });
 
